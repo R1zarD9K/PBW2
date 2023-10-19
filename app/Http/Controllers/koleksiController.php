@@ -6,14 +6,19 @@ use App\Models\Collection;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Session;
 use App\Models\Koleksi;
+use App\DataTables\KoleksiDataTable;
 
 class KoleksiController extends Controller
 {
-    public function index() {
-        $koleksi = Collection::all();
-        return view('koleksi.daftarKoleksi', compact('koleksi'));
+    // public function index() {
+    //     $koleksi = Collection::all();
+    //     return view('koleksi.daftarKoleksi', compact('koleksi'));
+    // }
+        
+    public function index(KoleksiDataTable $dataTable)
+    {
+        return $dataTable->render('koleksi.daftarKoleksi');
     }
-
     public function show($id)
     {
         $koleksi = Collection::findOrFail($id);

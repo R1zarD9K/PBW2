@@ -2,6 +2,7 @@
 
 namespace App\DataTables;
 
+use App\Models\Collection;
 use App\Models\Koleksi;
 use Illuminate\Database\Eloquent\Builder as QueryBuilder;
 use Yajra\DataTables\EloquentDataTable;
@@ -19,9 +20,6 @@ class KoleksiDataTable extends DataTable
      *
      * @param QueryBuilder $query Results from query() method.
      */
-    // Nama    : Dimas Dwi Kurniawan
-    // NIM     : 6706220041
-    // Kelas   : D3IF-4603
     public function dataTable(QueryBuilder $query): EloquentDataTable
     {
         return (new EloquentDataTable($query))
@@ -47,7 +45,7 @@ class KoleksiDataTable extends DataTable
     /**
      * Get the query source of dataTable.
      */
-    public function query(Koleksi $model): QueryBuilder
+    public function query(Collection $model): QueryBuilder
     {
         return $model->newQuery();
     }

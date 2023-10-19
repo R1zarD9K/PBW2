@@ -22,7 +22,7 @@
                         {{ __('Koleksi') }}
                     </x-nav-link>
                     <x-nav-link :href="route('user.daftarPengguna')" :active="request()->routeIs('user.daftarPengguna') || request()->routeIs('user.registrasi') || request()->routeIs('user.infoPengguna')">
-                        {{ __('User') }}
+                        {{ __('Pengguna') }}
                     </x-nav-link>
                 </div>
             </div>

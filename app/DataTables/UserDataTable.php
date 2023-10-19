@@ -1,7 +1,7 @@
 <?php
 
 namespace App\DataTables;
- 
+
 use App\Models\User;
 use Illuminate\Database\Eloquent\Builder as QueryBuilder;
 use Yajra\DataTables\EloquentDataTable;
@@ -9,12 +9,9 @@ use Yajra\DataTables\Html\Builder as HtmlBuilder;
 use Yajra\DataTables\Html\Button;
 use Yajra\DataTables\Html\Column;
 use Yajra\DataTables\Services\DataTable;
- 
+
 class UserDataTable extends DataTable
 {
-    // Nama    : Dimas Dwi Kurniawan
-    // NIM     : 6706220041
-    // Kelas   : D3IF-4603
     public function dataTable(QueryBuilder $query): EloquentDataTable
     {
         return (new EloquentDataTable($query))
@@ -32,12 +29,12 @@ class UserDataTable extends DataTable
         })
         ->setRowId('id');
     }
- 
+
     public function query(User $model): QueryBuilder
     {
         return $model->newQuery();
     }
- 
+
     public function html(): HtmlBuilder
     {
         return $this->builder()
@@ -56,7 +53,7 @@ class UserDataTable extends DataTable
                         Button::make('reload'),
                     ]);
     }
- 
+
     public function getColumns(): array
     {
         return [
@@ -70,7 +67,7 @@ class UserDataTable extends DataTable
             Column::make('updated_at'),
         ];
     }
- 
+
     protected function filename(): string
     {
         return 'Users_'.date('YmdHis');

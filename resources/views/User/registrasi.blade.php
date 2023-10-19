@@ -5,6 +5,7 @@
         </h2>
     </x-slot>
 
+    @section('content')
 <!--     
     // Nama:Rahmat Pratami
     // Kelas:D3IF-46-03
@@ -128,4 +129,5 @@
             window.history.back();
         }
     </script>
+    @endsection
 </x-app-layout>
